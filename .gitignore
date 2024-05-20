@@ -1,0 +1,4 @@
+*.vtk
+draft/*
+*.pyc
+.vscode/*
