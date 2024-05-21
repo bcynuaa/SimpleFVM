@@ -71,7 +71,7 @@ class Solver:
         self.u_on_points[point_id] = np.array(list(self.mesh.dirichlet_boundary_dict.values()))
         pass
 
-    def computeNblaUOnCells(self) -> None:
+    def computeNablaUOnCells(self) -> None:
         for i_cell in range(self.mesh.n_cells):
             current_cell = self.mesh.mesh.get_cell(i_cell)
             nabla_u: np.ndarray = np.zeros(2)
@@ -137,7 +137,7 @@ class Solver:
     def eachStep(self) -> None:
         self.cellDataToPointData()
         self.applyDirichletBoundary()
-        self.computeNblaUOnCells()
+        self.computeNablaUOnCells()
         self.cellGradientToPointGradient()
         self.resetFlux()
         self.addFlux()
